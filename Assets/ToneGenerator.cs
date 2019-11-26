@@ -18,12 +18,14 @@ public class ToneGenerator : MonoBehaviour
     private int currentNote;
     [SerializeField]
     private int[] sequence = { 0, 0, 1, 1, 0 };
+    //sequence referencing the position of the numbers in the array
 
     [SerializeField]
     private float sampleLengthInSeconds = 1;
     [SerializeField]
     private float beatsPerMinuteTempo = 120;
     // Creating the notes using their special frequencies
+    //Not using these variables yet
 
 
     void Awake()
@@ -39,7 +41,7 @@ public class ToneGenerator : MonoBehaviour
     }
 
     void CreateTone(float note)
-        //Create own method then reference it in void start
+        
     {
         for (int i = 0; i < samples.Length; i++)
         {
@@ -59,9 +61,11 @@ public class ToneGenerator : MonoBehaviour
             currentNote = 0;
 
         CreateTone(notes[sequence[currentNote]]);
+        //Connecting all this syntax
 
         source.clip = clip;
         source.Play();
     }
+    //Creating own methods then referencing it in void start
     //Create an array for the notes, Create a tempo; create sounds at certain intervals. Coroutine/invokerepeating to have a beat. Synthesise tones
 }
