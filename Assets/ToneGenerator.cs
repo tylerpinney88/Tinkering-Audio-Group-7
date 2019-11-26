@@ -23,7 +23,7 @@ public class ToneGenerator : MonoBehaviour
     private float sampleLengthInSeconds = 1;
     [SerializeField]
     private float beatsPerMinuteTempo = 120;
-    // Creating the B note using its frequency
+    // Creating the notes using their special frequencies
 
 
     void Awake()
@@ -63,5 +63,5 @@ public class ToneGenerator : MonoBehaviour
         source.clip = clip;
         source.Play();
     }
-    //Create an array for the or the notes, Create a tempo; create sounds at certain intervals. Coroutine/invoke repeating to have a beat
+    //Create an array for the notes, Create a tempo; create sounds at certain intervals. Coroutine/invokerepeating to have a beat. Synthesise tones
 }
