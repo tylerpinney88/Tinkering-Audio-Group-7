@@ -23,10 +23,15 @@ public class MenuScript : MonoBehaviour
     public float Countdown;
     bool CountdownOn;
 
+    public float TestButtonCountdown;
+    public bool IsButtonPressed;
+
     public Slider VolumeSlider;
     public bool SlideNoisePlaying;
     public float SlideCountdown;
 
+    public Slider Frequency1Slider;
+    public Slider Frequency2Slider;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +41,10 @@ public class MenuScript : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 0; //force 2D sound
         audioSource.Stop(); //avoids audiosource from starting to play automatically
+        Frequency1Slider.maxValue = 20000;
+        Frequency2Slider.maxValue = 20000;
+        Frequency1Slider.value = 300;
+        Frequency2Slider.value = 300;
     }
 
     // Update is called once per frame
@@ -71,6 +80,19 @@ public class MenuScript : MonoBehaviour
             SlideNoisePlaying = false;
             
         }
+
+        if (IsButtonPressed == true) 
+        {
+            audioSource.Play();
+            TestButtonCountdown = TestButtonCountdown - Time.deltaTime;
+        }
+
+        if (TestButtonCountdown <= 0) 
+        {
+            IsButtonPressed = false;
+        }
+
+
         audioSource.volume = VolumeSlider.value;
         SlideCountdown = SlideCountdown -= Time.deltaTime;
     }
@@ -80,6 +102,17 @@ public class MenuScript : MonoBehaviour
     {
         OptionsMenu.enabled = true;
         MainMenu.enabled = false;
+        audioSource.Play();
+        Countdown = 0.2f;
+        CountdownOn = true;
+
+    }
+
+
+    public void BackButton()
+    {
+        OptionsMenu.enabled = false;
+        MainMenu.enabled = true;
         audioSource.Play();
         Countdown = 0.2f;
         CountdownOn = true;
@@ -136,6 +169,25 @@ public class MenuScript : MonoBehaviour
         {
             audioSource.Play();
             SlideNoisePlaying = true;
+        }
+    }
+
+    public void OnFrequency1SliderChange() 
+    {
+        frequency1 = Frequency1Slider.value;
+    }
+
+    public void OnFrequency2SliderChange()
+    {
+        frequency2 = Frequency2Slider.value;
+    }
+
+    public void PlayAudio() 
+    {
+        if (IsButtonPressed == false) 
+        {
+            IsButtonPressed = true;
+            TestButtonCountdown = 0.4f;
         }
     }
 }
