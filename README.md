@@ -9,7 +9,7 @@ https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnAudioFilterRead.html
 
 ### How to Open
 
-download the Zip file and extract everything in it, Open unity and click open project. go into the folder and find the folder called  
+download the Zip file and extract everything in it, Open unity and click open project. go into the folder "Tinkering Audio Group 7" and select the folder "Tinker Audio - UI". 
 
 ### The Unlicense
   
