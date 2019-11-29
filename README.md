@@ -11,6 +11,11 @@ https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnAudioFilterRead.html
 
 download the Zip file and extract everything in it, Open unity and click open project. go into the folder "Tinkering Audio Group 7" and select the folder "Tinker Audio - UI". 
 
+
+## Tolu Ogbaro - Contract 3
+
+Clone Repository and open "Tinkering Audio Group 7" from "Final Version" in Unity
+
 ### The Unlicense
   
 This is free and unencumbered software released into the public domain.
