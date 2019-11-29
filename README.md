@@ -2,9 +2,14 @@
 
 
 
-# Tyler's Contract 4
-## References
+## Tyler's Contract 4
+### References
+
 https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnAudioFilterRead.html
+
+### How to Open
+
+download the Zip file and extract everything in it, Open unity and click open project. go into the folder and find the folder called  
 
 ### The Unlicense
   
